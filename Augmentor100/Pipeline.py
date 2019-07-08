@@ -248,7 +248,7 @@ class Pipeline(object):
                                     + "." \
                                     + (self.save_format if self.save_format else augmentor_image.file_format)
 
-                        images[i].save(os.path.join(augmentor_image.output_directory, save_name)，quality=100)
+                        images[i].save(os.path.join(augmentor_image.output_directory, save_name), quality=100)
 
                     else:
                         save_name = "_groundtruth_(" \
@@ -262,7 +262,7 @@ class Pipeline(object):
                                     + "." \
                                     + (self.save_format if self.save_format else augmentor_image.file_format)
 
-                        images[i].save(os.path.join(augmentor_image.output_directory, save_name)，quality=100)
+                        images[i].save(os.path.join(augmentor_image.output_directory, save_name), quality=100)
 
             except IOError as e:
                 print("Error writing %s, %s. Change save_format to PNG?" % (file_name, e.message))
