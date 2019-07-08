@@ -5,7 +5,7 @@
 * in Augmentor/Pipeline.py 
 ```python
 def _execute(self, augmentor_image, save_to_disk=True, multi_threaded=True):
-        # ?
+        #...
         if save_to_disk:
             file_name = str(uuid.uuid4())
             try:
@@ -19,7 +19,7 @@ def _execute(self, augmentor_image, save_to_disk=True, multi_threaded=True):
                                     + "." \
                                     + (self.save_format if self.save_format else augmentor_image.file_format)
 
-                        images[i].save(os.path.join(augmentor_image.output_directory, save_name)?quality=100)
+                        images[i].save(os.path.join(augmentor_image.output_directory, save_name), quality=100)
 
                     else:
                         save_name = "_groundtruth_(" \
@@ -33,8 +33,8 @@ def _execute(self, augmentor_image, save_to_disk=True, multi_threaded=True):
                                     + "." \
                                     + (self.save_format if self.save_format else augmentor_image.file_format)
 
-                        images[i].save(os.path.join(augmentor_image.output_directory, save_name)?quality=100)
-	# ?
+                        images[i].save(os.path.join(augmentor_image.output_directory, save_name), quality=100)
+	#...
         return images[0]
 ```
 
