@@ -1,12 +1,13 @@
 from setuptools import setup
 
 setup(
-    name='Augmentor',
-    packages=['Augmentor'],
+    name='Augmentor100',
+    packages=['Augmentor100'],
     version='0.2.3',
-    description='Image augmentation library for Machine Learning',
+    description='Modified version of Augmentor 0.2.3, forced to save images in highest quality',
     long_description='Image augmentation library for Machine Learning',
     license='MIT',
+    # below are the info of the developer of Augmentor
     author='Marcus D. Bloice',
     author_email='marcus.bloice@medunigraz.at',
     url='https://github.com/mdbloice/Augmentor',                            # URL to GitHub repo
