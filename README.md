@@ -1,4 +1,4 @@
-# This is modified version of [Augmentor](https://github.com/mdbloice/Augmentor) for personal usage.
+## This is modified version of [Augmentor](https://github.com/mdbloice/Augmentor) for personal usage.
 * Augmentor100: force the Augmentor to save image with the highest image quality (quality=100)
 
 #### To install this package
@@ -10,7 +10,7 @@ pip install git+https://github.com/VincentYCYao/Augmentor100@master
 * in Augmentor/Pipeline.py 
 ```python
 def _execute(self, augmentor_image, save_to_disk=True, multi_threaded=True):
-        # ?
+        #...
         if save_to_disk:
             file_name = str(uuid.uuid4())
             try:
@@ -24,7 +24,7 @@ def _execute(self, augmentor_image, save_to_disk=True, multi_threaded=True):
                                     + "." \
                                     + (self.save_format if self.save_format else augmentor_image.file_format)
 
-                        images[i].save(os.path.join(augmentor_image.output_directory, save_name)?quality=100)
+                        images[i].save(os.path.join(augmentor_image.output_directory, save_name), quality=100)
 
                     else:
                         save_name = "_groundtruth_(" \
@@ -38,16 +38,19 @@ def _execute(self, augmentor_image, save_to_disk=True, multi_threaded=True):
                                     + "." \
                                     + (self.save_format if self.save_format else augmentor_image.file_format)
 
-                        images[i].save(os.path.join(augmentor_image.output_directory, save_name)?quality=100)
-	# ?
+                        images[i].save(os.path.join(augmentor_image.output_directory, save_name), quality=100)
+	#...
         return images[0]
 ```
+
+
+## Below are the doc from [Augmentor](https://github.com/mdbloice/Augmentor).
 
 
 
 ![AugmentorLogo](https://github.com/mdbloice/AugmentorFiles/blob/master/Misc/AugmentorLogo.png)
 
-Augmentor is an image augmentation library in Python for machine learning. It aims to be a standalone library that is platform and framework independent, which is more convenient, allows for finer grained control over augmentation, and implements the most real-world relevant augmentation techniques. It employs a stochastic approach using building blocks that allow for operations to be pieced together in a pipeline.
+Augmentor is an image augmentation library in Python for machine learning. It aims to be a standalone library that is platform and framework independent, which is more convenient, allows for finer grained control over augmentation, and implements the most real-world relevant augmentation techniques. It employs ausage stochastic approach using building blocks that allow for operations to be pieced together in a pipeline.
 
 [![PyPI](https://img.shields.io/badge/Augmentor-v0.2.3-blue.svg?maxAge=2592000)](https://pypi.python.org/pypi/Augmentor)
 [![Supported Python Versions](https://img.shields.io/badge/python-2.7%20%7C%203.3%20%7C%203.4%20%7C%203.5%20%7C%203.6-blue.svg)](https://pypi.python.org/pypi/Augmentor)
