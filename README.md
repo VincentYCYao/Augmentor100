@@ -1,4 +1,4 @@
-# This is modified version of [Augmentor](https://github.com/mdbloice/Augmentor) for personal usage.
+## This is modified version of [Augmentor](https://github.com/mdbloice/Augmentor) for personal usage.
 * Augmentor100: force the Augmentor to save image with the highest image quality (quality=100)
 
 #### The changed code:
@@ -37,6 +37,9 @@ def _execute(self, augmentor_image, save_to_disk=True, multi_threaded=True):
 	# ?
         return images[0]
 ```
+
+
+## Below are the doc from [Augmentor](https://github.com/mdbloice/Augmentor) for personal usage.
 
 
 
