@@ -39,13 +39,13 @@ def _execute(self, augmentor_image, save_to_disk=True, multi_threaded=True):
 ```
 
 
-## Below are the doc from [Augmentor](https://github.com/mdbloice/Augmentor) for personal usage.
+## Below are the doc from [Augmentor](https://github.com/mdbloice/Augmentor).
 
 
 
 ![AugmentorLogo](https://github.com/mdbloice/AugmentorFiles/blob/master/Misc/AugmentorLogo.png)
 
-Augmentor is an image augmentation library in Python for machine learning. It aims to be a standalone library that is platform and framework independent, which is more convenient, allows for finer grained control over augmentation, and implements the most real-world relevant augmentation techniques. It employs a stochastic approach using building blocks that allow for operations to be pieced together in a pipeline.
+Augmentor is an image augmentation library in Python for machine learning. It aims to be a standalone library that is platform and framework independent, which is more convenient, allows for finer grained control over augmentation, and implements the most real-world relevant augmentation techniques. It employs ausage stochastic approach using building blocks that allow for operations to be pieced together in a pipeline.
 
 [![PyPI](https://img.shields.io/badge/Augmentor-v0.2.3-blue.svg?maxAge=2592000)](https://pypi.python.org/pypi/Augmentor)
 [![Supported Python Versions](https://img.shields.io/badge/python-2.7%20%7C%203.3%20%7C%203.4%20%7C%203.5%20%7C%203.6-blue.svg)](https://pypi.python.org/pypi/Augmentor)
