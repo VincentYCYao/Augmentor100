@@ -634,7 +634,7 @@ class RotateStandard(Operation):
     .. seealso:: For 90 degree rotations, see the :class:`Rotate` class.
     """
 
-    def __init__(self, probability, max_left_rotation, max_right_rotation, expand=False):
+    def __init__(self, probability, max_left_rotation, max_right_rotation, expand=False, fillcolor=None):
         """
         Documentation to appear.
         """
@@ -642,6 +642,7 @@ class RotateStandard(Operation):
         self.max_left_rotation = -abs(max_left_rotation)   # Ensure always negative
         self.max_right_rotation = abs(max_right_rotation)  # Ensure always positive
         self.expand = expand
+        self.fillcolor = fillcolor
 
     def perform_operation(self, images):
         """
@@ -665,7 +666,7 @@ class RotateStandard(Operation):
             rotation = random_right
 
         def do(image):
-            return image.rotate(rotation, expand=self.expand, resample=Image.BICUBIC)
+            return image.rotate(rotation, expand=self.expand, resample=Image.BICUBIC, fillcolor=self.fillcolor)
 
         augmented_images = []
 
@@ -1451,39 +1452,39 @@ class Distort(Operation):
             if i not in last_row and i not in last_column:
                 polygon_indices.append([i, i + 1, i + horizontal_tiles, i + 1 + horizontal_tiles])
 
+        for a, b, c, d in polygon_indices:
+            dx = random.randint(-self.magnitude, self.magnitude)
+            dy = random.randint(-self.magnitude, self.magnitude)
+
+            x1, y1, x2, y2, x3, y3, x4, y4 = polygons[a]
+            polygons[a] = [x1, y1,
+                            x2, y2,
+                            x3 + dx, y3 + dy,
+                            x4, y4]
+
+            x1, y1, x2, y2, x3, y3, x4, y4 = polygons[b]
+            polygons[b] = [x1, y1,
+                            x2 + dx, y2 + dy,
+                            x3, y3,
+                            x4, y4]
+
+            x1, y1, x2, y2, x3, y3, x4, y4 = polygons[c]
+            polygons[c] = [x1, y1,
+                            x2, y2,
+                            x3, y3,
+                            x4 + dx, y4 + dy]
+
+            x1, y1, x2, y2, x3, y3, x4, y4 = polygons[d]
+            polygons[d] = [x1 + dx, y1 + dy,
+                            x2, y2,
+                            x3, y3,
+                            x4, y4]
+
+        generated_mesh = []
+        for i in range(len(dimensions)):
+            generated_mesh.append([dimensions[i], polygons[i]])
+
         def do(image):
-
-            for a, b, c, d in polygon_indices:
-                dx = random.randint(-self.magnitude, self.magnitude)
-                dy = random.randint(-self.magnitude, self.magnitude)
-
-                x1, y1, x2, y2, x3, y3, x4, y4 = polygons[a]
-                polygons[a] = [x1, y1,
-                               x2, y2,
-                               x3 + dx, y3 + dy,
-                               x4, y4]
-
-                x1, y1, x2, y2, x3, y3, x4, y4 = polygons[b]
-                polygons[b] = [x1, y1,
-                               x2 + dx, y2 + dy,
-                               x3, y3,
-                               x4, y4]
-
-                x1, y1, x2, y2, x3, y3, x4, y4 = polygons[c]
-                polygons[c] = [x1, y1,
-                               x2, y2,
-                               x3, y3,
-                               x4 + dx, y4 + dy]
-
-                x1, y1, x2, y2, x3, y3, x4, y4 = polygons[d]
-                polygons[d] = [x1 + dx, y1 + dy,
-                               x2, y2,
-                               x3, y3,
-                               x4, y4]
-
-            generated_mesh = []
-            for i in range(len(dimensions)):
-                generated_mesh.append([dimensions[i], polygons[i]])
 
             return image.transform(image.size, Image.MESH, generated_mesh, resample=Image.BICUBIC)
 

@@ -1,5 +1,6 @@
 ## This is modified version of [Augmentor](https://github.com/mdbloice/Augmentor) for personal usage.
-* Augmentor100: force the Augmentor to save image with the highest image quality (quality=100)
+* based on Augmentor v0.2.6
+* Augmentor100 (v0.2.6): force the Augmentor to save image with the highest image quality (quality=100)
 
 #### To install this package
 ```python

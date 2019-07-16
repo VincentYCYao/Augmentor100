@@ -3,8 +3,8 @@ from setuptools import setup
 setup(
     name='Augmentor100',
     packages=['Augmentor100'],
-    version='0.2.3',
-    description='Modified version of Augmentor 0.2.3, forced to save images in highest quality',
+    version='0.2.6',
+    description='Modified version of Augmentor 0.2.6, forced to save images in highest quality',
     long_description='Image augmentation library for Machine Learning',
     license='MIT',
     # below are the info of the developer of Augmentor
