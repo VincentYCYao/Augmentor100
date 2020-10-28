@@ -2,13 +2,19 @@
 * based on Augmentor v0.2.6
 * Augmentor100 (v0.2.6): force the Augmentor to save image with the highest image quality (quality=100)
 
+
+
+
 #### To install this package
 ```python
 pip install git+https://github.com/VincentYCYao/Augmentor100@master
 ```
 
+
+
 #### The changed code:
 * in Augmentor/Pipeline.py 
+
 ```python
 def _execute(self, augmentor_image, save_to_disk=True, multi_threaded=True):
         #...
@@ -45,12 +51,8 @@ def _execute(self, augmentor_image, save_to_disk=True, multi_threaded=True):
 ```
 
 
+
 ## Below are the doc from [Augmentor](https://github.com/mdbloice/Augmentor).
-
-
-
-![AugmentorLogo](https://github.com/mdbloice/AugmentorFiles/blob/master/Misc/AugmentorLogo.png)
-
 Augmentor is an image augmentation library in Python for machine learning. It aims to be a standalone library that is platform and framework independent, which is more convenient, allows for finer grained control over augmentation, and implements the most real-world relevant augmentation techniques. It employs ausage stochastic approach using building blocks that allow for operations to be pieced together in a pipeline.
 
 [![PyPI](https://img.shields.io/badge/Augmentor-v0.2.3-blue.svg?maxAge=2592000)](https://pypi.python.org/pypi/Augmentor)
@@ -62,7 +64,6 @@ Augmentor is an image augmentation library in Python for machine learning. It ai
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/4QuantOSS/Augmentor/master)
 
 ## Installation
-
 Augmentor is written in Python. A Julia version of the package is also being developed as a sister project and is available [here](https://github.com/Evizero/Augmentor.jl).
 
 Install using `pip` from the command line:
@@ -73,9 +74,12 @@ pip install Augmentor
 
 See the documentation for building from source. To upgrade from a previous version, use `pip install Augmentor --upgrade`.
 
-## Documentation
 
+
+## Documentation
 Complete documentation can be found on Read the Docs: <http://augmentor.readthedocs.io/>
+
+
 
 ## Quick Start Guide and Usage
 The purpose of _Augmentor_ is to automate image augmentation (artificial data generation) in order to expand datasets as input for machine learning algorithms, especially neural networks and deep learning.
